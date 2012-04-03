@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5E8D831-864B-4BE7-8027-77727D5A6D80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeRDP</RootNamespace>
+    <AssemblyName>FreeRDP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0414, 0219</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Codec\FrameMarkerCommand.cs" />
+    <Compile Include="Codec\Rfx.cs" />
+    <Compile Include="Codec\RfxMessage.cs" />
+    <Compile Include="Codec\SetSurfaceBitsCommand.cs" />
+    <Compile Include="Codec\StreamSurfaceBitsCommand.cs" />
+    <Compile Include="Codec\SurfaceBitsCommand.cs" />
+    <Compile Include="Codec\SurfaceCommand.cs" />
+    <Compile Include="Core\RDP.cs" />
+    <Compile Include="Utils\Memory.cs" />
+    <Compile Include="Core\Settings.cs" />
+    <Compile Include="Core\Context.cs" />
+    <Compile Include="GDI\GDI.cs" />
+    <Compile Include="Core\FreeRDP.cs" />
+    <Compile Include="Cache\Cache.cs" />
+    <Compile Include="Cache\GlyphCache.cs" />
+    <Compile Include="Cache\BitmapCache.cs" />
+    <Compile Include="Cache\PointerCache.cs" />
+    <Compile Include="Cache\BrushCache.cs" />
+    <Compile Include="Cache\PaletteCache.cs" />
+    <Compile Include="Cache\OffscreenCache.cs" />
+    <Compile Include="Core\Update\SecondaryUpdate.cs" />
+    <Compile Include="Core\Update\PrimaryUpdate.cs" />
+    <Compile Include="Core\Update\PointerUpdate.cs" />
+    <Compile Include="Core\Update\AltSecUpdate.cs" />
+    <Compile Include="Core\Update\WindowUpdate.cs" />
+    <Compile Include="Core\Update\Update.cs" />
+    <Compile Include="Core\Graphics\Bitmap.cs" />
+    <Compile Include="Core\Graphics\Pointer.cs" />
+    <Compile Include="Core\Graphics\Glyph.cs" />
+    <Compile Include="Core\Graphics\Graphics.cs" />
+    <Compile Include="Core\Input.cs" />
+    <Compile Include="Locale\Keyboard.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="None" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup />
+</Project>
