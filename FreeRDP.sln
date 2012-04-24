@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeRDP", "FreeRDP\FreeRDP.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFreeRDP", "NFreeRDP\NFreeRDP.csproj", "{DDCCC18C-7B29-431D-8F48-F6DCD579D272}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFreeRDP", "GFreeRDP\GFreeRDP.csproj", "{60C01725-0B80-414D-82F4-6EDEF452AD94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -13,6 +15,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Debug|Mixed Platforms.ActiveCfg = Debug|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Debug|Mixed Platforms.Build.0 = Debug|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Debug|x86.ActiveCfg = Debug|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Debug|x86.Build.0 = Debug|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Release|Mixed Platforms.ActiveCfg = Release|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Release|Mixed Platforms.Build.0 = Release|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Release|x86.ActiveCfg = Release|Mixed Platforms
+		{60C01725-0B80-414D-82F4-6EDEF452AD94}.Release|x86.Build.0 = Release|Mixed Platforms
 		{C5E8D831-864B-4BE7-8027-77727D5A6D80}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{C5E8D831-864B-4BE7-8027-77727D5A6D80}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{C5E8D831-864B-4BE7-8027-77727D5A6D80}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -30,11 +40,8 @@ Global
 		{DDCCC18C-7B29-431D-8F48-F6DCD579D272}.Release|x86.ActiveCfg = Release|x86
 		{DDCCC18C-7B29-431D-8F48-F6DCD579D272}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Client\Client.csproj
+		StartupItem = GFreeRDP\GFreeRDP.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None
@@ -46,5 +53,8 @@ Global
 		$3.inheritsSet = Mono
 		$3.inheritsScope = text/x-csharp
 		$3.scope = text/x-csharp
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
