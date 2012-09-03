@@ -22,13 +22,22 @@ using System.Runtime.InteropServices;
 
 namespace FreeRDP
 {
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 	public unsafe delegate void pContextNew(freerdp* instance, rdpContext* context);
+
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 	public unsafe delegate void pContextFree(freerdp* instance, rdpContext* context);
-		
+	
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 	public unsafe delegate bool pPreConnect(freerdp* instance);
+
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 	public unsafe delegate bool pPostConnect(freerdp* instance);
 	
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 	public unsafe delegate bool pAuthenticate(freerdp* instance, IntPtr username, IntPtr password, IntPtr domain);
+
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 	public unsafe delegate bool pVerifyCertificate(freerdp* instance, IntPtr subject, IntPtr issuer, IntPtr fingerprint);
 	
 	[StructLayout(LayoutKind.Sequential)]

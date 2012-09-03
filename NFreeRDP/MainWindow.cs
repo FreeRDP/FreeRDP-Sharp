@@ -12,12 +12,6 @@ namespace NFreeRDP
 {
 	public partial class MainWindow : Form
 	{
-		int port;
-		string hostname;
-		string username;
-		string domain;
-		string password;
-
 		RdpClient rdpClient;
 
 		public MainWindow()
@@ -27,15 +21,15 @@ namespace NFreeRDP
 
 		private void newConnectionToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			rdpClient = new RdpClient();
+			ConnectionDialog dialog = new ConnectionDialog();
 
-			port = 3389;
-			hostname = "localhost";
-			username = "Administrator";
-			domain = "";
-			password = "Password123!";
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				rdpClient = new RdpClient();
+				rdpClient.Connect(dialog.GetConnectionSettings());
+			}
 
-			rdpClient.Connect(hostname, port, username, domain, password);
+			dialog.Dispose();
 		}
 	}
 }

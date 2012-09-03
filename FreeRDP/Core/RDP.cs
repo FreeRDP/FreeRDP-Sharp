@@ -25,40 +25,40 @@ namespace FreeRDP
 {	
 	public unsafe class RDP
 	{		
-		[DllImport("libfreerdp-core")]
+		[DllImport("libfreerdp", CallingConvention=CallingConvention.Cdecl)]
 		public static extern void freerdp_context_new(freerdp* instance);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_context_free(freerdp* instance);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int freerdp_connect(freerdp* instance);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int freerdp_disconnect(freerdp* instance);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int freerdp_check_fds(freerdp* instance);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern freerdp* freerdp_new();
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_free(freerdp* instance);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_input_send_synchronize_event(IntPtr input, UInt32 flags);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_input_send_keyboard_event(IntPtr input, UInt16 flags, UInt16 code);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_input_send_unicode_keyboard_event(IntPtr input, UInt16 flags, UInt16 code);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_input_send_mouse_event(IntPtr input, UInt16 flags, UInt16 x, UInt16 y);
-		
-		[DllImport("libfreerdp-core")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_input_send_extended_mouse_event(IntPtr input, UInt16 flags, UInt16 x, UInt16 y);
 		
 		public int Port { get { return (int) settings->port; } set { settings->port = (UInt32) value; } }

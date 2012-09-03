@@ -26,11 +26,7 @@ namespace NFreeRDP
 	public unsafe class RdpClient : IUpdate, IPrimaryUpdate
 	{
 		private RDP rdp;
-		private int port;
-		private string hostname;
-		private string username;
-		private string domain;
-		private string password;
+		private ConnectionSettings settings;
 		
 		private Thread thread;
 		private static bool procRunning = true;
@@ -40,11 +36,6 @@ namespace NFreeRDP
 		 */ 
 		public RdpClient()
 		{
-			port = 3389;
-			hostname = "localhost";
-			username = "Administrator";
-			domain = "";
-			password = "";
 			rdp = new RDP();
 			thread = new Thread(() => ThreadProc(rdp));
 		}
@@ -52,11 +43,14 @@ namespace NFreeRDP
 		/**
 		 * Connect to FreeRDP server, start thread
 		 */ 
-		public void Connect(string hostname, int port, string username, string domain, string password)
+		public void Connect(ConnectionSettings settings)
 		{
 			rdp.SetUpdateInterface(this);
 			rdp.SetPrimaryUpdateInterface(this);
-			rdp.Connect(hostname, port, username, domain, password);
+
+			rdp.Connect(settings.hostname, settings.port,
+				settings.username, settings.domain, settings.password);
+			
 			procRunning = true;
 			thread.Start();
 		}

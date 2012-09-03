@@ -37,14 +37,14 @@ namespace FreeRDP
 			PALETTE4_PLANER = 6,
 			PALETTE8 = 7
 		}
-		
-		[DllImport("libfreerdp-codec")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr rfx_context_new();
-	
-		[DllImport("libfreerdp-codec")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void rfx_context_free(IntPtr handle);
-		
-		[DllImport("libfreerdp-codec")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void rfx_context_set_pixel_format(IntPtr handle, RFX_PIXEL_FORMAT format);
 		
 		public Rfx()

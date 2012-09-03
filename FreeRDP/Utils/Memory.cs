@@ -24,16 +24,16 @@ namespace FreeRDP
 {
 	public unsafe class Memory
 	{
-		[DllImport("libfreerdp-utils")]
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr xmalloc(UIntPtr size);
-		
-		[DllImport("libfreerdp-utils")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr xzalloc(UIntPtr size);
-		
-		[DllImport("libfreerdp-utils")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr xrealloc(IntPtr ptr, UIntPtr size);
-		
-		[DllImport("libfreerdp-utils")]
+
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void xfree(IntPtr ptr);
 		
 		public Memory()
