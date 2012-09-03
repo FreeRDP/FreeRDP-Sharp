@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 namespace FreeRDP
 {
-	public unsafe class Memory
+	public unsafe static class Memory
 	{
 		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr xmalloc(UIntPtr size);
@@ -35,11 +35,7 @@ namespace FreeRDP
 
 		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void xfree(IntPtr ptr);
-		
-		public Memory()
-		{
-		}
-		
+
 		public static IntPtr Malloc(int size)
 		{		
 			UIntPtr size_t = new UIntPtr((ulong) size);

@@ -25,7 +25,7 @@ namespace FreeRDP
 {	
 	public unsafe class RDP
 	{		
-		[DllImport("libfreerdp", CallingConvention=CallingConvention.Cdecl)]
+		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_context_new(freerdp* instance);
 
 		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
@@ -60,7 +60,9 @@ namespace FreeRDP
 
 		[DllImport("libfreerdp", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void freerdp_input_send_extended_mouse_event(IntPtr input, UInt16 flags, UInt16 x, UInt16 y);
-		
+
+		private static int winsock = -1;
+
 		public int Port { get { return (int) settings->port; } set { settings->port = (UInt32) value; } }
 		public int Width { get { return (int) settings->width; } set { settings->width = (UInt32) value; } }
 		public int Height { get { return (int) settings->height; } set { settings->height = (UInt32) value; } }
@@ -89,6 +91,9 @@ namespace FreeRDP
 		
 		public RDP()
 		{
+			if (winsock == -1)
+				winsock = Tcp.WSAStartup();
+
 			handle = freerdp_new();
 			
 			iUpdate = null;
@@ -131,7 +136,7 @@ namespace FreeRDP
 			ASCIIEncoding strEncoder = new ASCIIEncoding();
 			
 			int size = strEncoder.GetByteCount(str);
-			IntPtr pStr = Memory.Zalloc(size);
+			IntPtr pStr = Memory.Zalloc(size + 1);
 			byte[] buffer = strEncoder.GetBytes(str);
 			Marshal.Copy(buffer, 0, pStr, size);
 			
@@ -175,6 +180,7 @@ namespace FreeRDP
 			}
 			
 			settings->rfxCodec = 1;
+			settings->rfxCodecOnly = 1;
 			settings->fastpathOutput = 1;
 			settings->colorDepth = 32;
 			settings->frameAcknowledge = 0;
@@ -223,11 +229,13 @@ namespace FreeRDP
 		
 		private bool Authenticate(freerdp* instance, IntPtr username, IntPtr password, IntPtr domain)
 		{
+			Console.WriteLine("Authenticate");
 			return true;
 		}
 		
 		private bool VerifyCertificate(freerdp* instance, IntPtr subject, IntPtr issuer, IntPtr fingerprint)
 		{
+			Console.WriteLine("VerifyCertificate");
 			return true;
 		}
 		

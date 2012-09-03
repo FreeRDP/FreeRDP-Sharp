@@ -43,6 +43,7 @@ namespace FreeRDP
 		[FieldOffset(28 * 8)] public UInt32 encryptionLevel;
 		[FieldOffset(29 * 8)] public int authentication;
 		[FieldOffset(30 * 8)] public UInt32 negotiationFlags;
+		[FieldOffset(31 * 8)] public int negotiateSecurity;
 		
 		/* Connection Settings */
 		[FieldOffset(48 * 8)] public UInt32 port;
@@ -61,6 +62,16 @@ namespace FreeRDP
 		[FieldOffset(61 * 8)] public IntPtr passwordCookie;
 		[FieldOffset(62 * 8)] public IntPtr kerberosKDC;
 		[FieldOffset(63 * 8)] public IntPtr kerberosRealm;
+		[FieldOffset(64 * 8)] public int tsGateway;
+		[FieldOffset(65 * 8)] public IntPtr tsgHostname;
+		[FieldOffset(66 * 8)] public IntPtr tsgUsername;
+		[FieldOffset(67 * 8)] public IntPtr tsgPassword;
+		[FieldOffset(68 * 8)] public int local;
+		[FieldOffset(69 * 8)] public int authenticationOnly;
+		[FieldOffset(70 * 8)] public int fromStandardInput;
+		[FieldOffset(71 * 8)] public int sendConnectionPdu;
+		[FieldOffset(72 * 8)] public UInt32 preconnectionId;
+		[FieldOffset(73 * 8)] public IntPtr preconnectionBlob;
 		
 		/* User Interface Parameters */
 		[FieldOffset(80 * 8)] public int softwareGdi;
@@ -151,6 +162,11 @@ namespace FreeRDP
 		[FieldOffset(283 * 8)] public UInt32 nsCodecId;
 		[FieldOffset(284 * 8)] public UInt32 rfxCodecMode;
 		[FieldOffset(285 * 8)] public int frameAcknowledge;
+		[FieldOffset(286 * 8)] public int jpegCodec;
+		[FieldOffset(287 * 8)] public UInt32 jpegCodecId;
+		[FieldOffset(288 * 8)] public UInt32 jpegQuality;
+		[FieldOffset(289 * 8)] public UInt32 v3CodecId;
+		[FieldOffset(290 * 8)] public int rfxCodecOnly;
 	
 		/* Recording */
 		[FieldOffset(296 * 8)] public int dumpRfx;

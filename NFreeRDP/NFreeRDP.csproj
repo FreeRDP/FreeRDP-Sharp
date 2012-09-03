@@ -93,7 +93,6 @@
     <Compile Include="ConnectionDialog.Designer.cs">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConnectionDialogTest.cs" />
     <Compile Include="ConnectionSettings.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>

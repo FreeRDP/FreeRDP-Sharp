@@ -48,6 +48,8 @@ namespace NFreeRDP
 			rdp.SetUpdateInterface(this);
 			rdp.SetPrimaryUpdateInterface(this);
 
+			this.settings = settings;
+
 			rdp.Connect(settings.hostname, settings.port,
 				settings.username, settings.domain, settings.password);
 			

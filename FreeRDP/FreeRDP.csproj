@@ -69,6 +69,7 @@
     <Compile Include="Core\Graphics\Graphics.cs" />
     <Compile Include="Core\Input.cs" />
     <Compile Include="Locale\Keyboard.cs" />
+    <Compile Include="Utils\Tcp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

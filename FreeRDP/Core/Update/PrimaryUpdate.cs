@@ -467,27 +467,49 @@ namespace FreeRDP
 		private rdpUpdate* update;
 		private rdpPrimaryUpdate* primary;
 		
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void DstBltDelegate(rdpContext* context, DstBltOrder* dstBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void PatBltDelegate(rdpContext* context, PatBltOrder* patBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void ScrBltDelegate(rdpContext* context, ScrBltOrder* scrBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void OpaqueRectDelegate(rdpContext* context, OpaqueRectOrder* opaqueRect);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void DrawNineGridDelegate(rdpContext* context, DrawNineGridOrder* drawNineGrid);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void MultiDstBltDelegate(rdpContext* context, MultiDstBltOrder* multiDstBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void MultiPatBltDelegate(rdpContext* context, MultiPatBltOrder* multiPatBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void MultiScrBltDelegate(rdpContext* context, MultiScrBltOrder* multiScrBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void MultiOpaqueRectDelegate(rdpContext* context, MultiOpaqueRectOrder* multiOpaqueRect);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void MultiDrawNineGridDelegate(rdpContext* context, MultiDrawNineGridOrder* multiDrawNineGrid);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void LineToDelegate(rdpContext* context, LineToOrder* lineTo);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void PolylineDelegate(rdpContext* context, PolylineOrder* polyline);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void MemBltDelegate(rdpContext* context, MemBltOrder* memBlt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void Mem3BltDelegate(rdpContext* context, Mem3BltOrder* mem3Blt);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void SaveBitmapDelegate(rdpContext* context, SaveBitmapOrder* saveBitmap);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void GlyphIndexDelegate(rdpContext* context, GlyphIndexOrder* glyphIndex);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void FastIndexDelegate(rdpContext* context, FastIndexOrder* fastIndex);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void FastGlyphDelegate(rdpContext* context, FastGlyphOrder* fastGlyph);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void PolygonSCDelegate(rdpContext* context, PolygonSCOrder* polygonSC);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void PolygonCBDelegate(rdpContext* context, PolygonCBOrder* polygonCB);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void EllipseSCDelegate(rdpContext* context, EllipseSCOrder* ellipseSC);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void EllipseCBDelegate(rdpContext* context, EllipseCBOrder* ellipseCB);
 		
 		private DstBltDelegate DstBlt;

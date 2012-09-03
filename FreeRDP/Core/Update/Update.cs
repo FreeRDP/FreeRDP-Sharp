@@ -159,18 +159,28 @@ namespace FreeRDP
 		private rdpContext* context;
 		private rdpUpdate* update;
 		
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void BeginPaintDelegate(rdpContext* context);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void EndPaintDelegate(rdpContext* context);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void SetBoundsDelegate(rdpContext* context, rdpBounds* bounds);
 		delegate void SynchronizeDelegate(rdpContext* context);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void DesktopResizeDelegate(rdpContext* context);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void BitmapUpdateDelegate(rdpContext* context, BitmapUpdate* bitmap);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void PaletteDelegate(rdpContext* context, PaletteUpdate* palette);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void PlaySoundDelegate(rdpContext* context, PlaySoundUpdate* playSound);
 		
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void RefreshRectDelegate(rdpContext* context, byte count, IntPtr areas);
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void SuppressOutputDelegate(rdpContext* context, byte allow, IntPtr area);
 		
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		delegate void SurfaceBitsDelegate(rdpContext* context, SurfaceBits* surfaceBits);
 		
 		private BeginPaintDelegate BeginPaint;
