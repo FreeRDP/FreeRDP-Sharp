@@ -1,7 +1,8 @@
-/**
+﻿/**
  * FreeRDP: A Remote Desktop Protocol Implementation
+ * Abstract Server Interface
  *
- * Copyright 2012 Marc-Andre Moreau <marcandre.moreau@gmail.com>
+ * Copyright 2011-2012 Marc-Andre Moreau <marcandre.moreau@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +17,11 @@
  * limitations under the License.
  */
 
-using System;
-
-namespace GFreeRDP
+namespace FreeRDP.Server
 {
-	public interface IUserAction
+	public abstract class Server
 	{
-		void OnNewConnection(string hostname, string username, string password);
+		public abstract void Start();
+		public abstract void Stop();
 	}
 }

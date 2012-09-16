@@ -31,5 +31,10 @@ namespace NFreeRDP
 
 			dialog.Dispose();
 		}
+
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

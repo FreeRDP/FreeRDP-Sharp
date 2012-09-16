@@ -4,8 +4,8 @@ bin
 *.userprefs
 *.pidb
 obj
+*.pdb
 *.dll
 *.suo
 *~
-
 
